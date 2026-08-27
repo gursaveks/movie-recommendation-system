@@ -51,6 +51,6 @@ Recommended movies:
 Star Trek (2009) (rating: 3.8/5)
 ```
 
-## Note About `ratings.csv`
+## Dataset
 
-The full ratings file is too large for a normal GitHub repository, so it is excluded through `.gitignore`. Download it separately before running the program.
+The project includes the reduced `ratings.csv` file used by the program. The file contains movie ratings with `movieId` and `rating` columns.
