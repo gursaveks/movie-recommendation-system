@@ -71,6 +71,8 @@ The visual version displays each recommendation with its poster, title, and rati
    $env:TMDB_API_KEY = "your_tmdb_api_key"
    ```
 
+   Replace `your_tmdb_api_key` with the real key. Do not use the text `YOUR_TMDB_API_KEY`.
+
 3. Start Streamlit:
 
    ```bash

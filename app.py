@@ -47,6 +47,12 @@ def get_recommendations(movie):
 def get_poster(title):
     api_key = os.getenv("TMDB_API_KEY")
     if not api_key:
+        try:
+            api_key = st.secrets["TMDB_API_KEY"]
+        except (KeyError, FileNotFoundError):
+            api_key = None
+
+    if not api_key:
         return None
 
     title_without_year = title.rsplit(" (", 1)[0]
@@ -100,5 +106,12 @@ if st.button("Get Recommendations", type="primary"):
                     rating = average_ratings.get(movie["movieId"], 0)
                     st.write(f"Rating: {rating:.1f}/5")
 
-if not os.getenv("TMDB_API_KEY"):
-    st.caption("Set TMDB_API_KEY to display movie posters.")
+api_key = os.getenv("TMDB_API_KEY")
+if not api_key:
+    try:
+        api_key = st.secrets["TMDB_API_KEY"]
+    except (KeyError, FileNotFoundError):
+        api_key = None
+
+if not api_key:
+    st.warning("Set a TMDB API key to display online movie posters.")
