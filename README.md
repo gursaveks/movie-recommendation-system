@@ -6,13 +6,17 @@ A simple content-based movie recommendation project built with Python. It compar
 
 The program takes one or more movie titles as input. For each title, it compares the movie's genre information with all other movies and returns the five most similar results. A movie's average user rating is shown beside each recommendation.
 
-This project is designed as a clear command-line example for learning about:
+The project includes both a command-line program and a visual Streamlit web app. The web app shows recommendation cards with movie posters and ratings.
+
+This project is designed as a clear example for learning about:
 
 - Reading CSV files with pandas
 - Grouping ratings and calculating averages
 - Converting text into numerical features
 - Comparing movies with cosine similarity
 - Building a small interactive Python program
+- Creating a simple web interface with Streamlit
+- Loading poster images from a movie metadata API
 
 ## Features
 
@@ -36,6 +40,7 @@ This project is designed as a clear command-line example for learning about:
 | File | Description |
 | --- | --- |
 | `Movie Recomendation system.py` | Main Python application |
+| `app.py` | Streamlit web application with poster cards |
 | `movies.csv` | Movie IDs, titles, and genres |
 | `ratings.csv` | User ratings for movies |
 | `requirements.txt` | Required Python packages |
@@ -54,6 +59,25 @@ This project is designed as a clear command-line example for learning about:
    ```bash
    python "Movie Recomendation system.py"
    ```
+
+## Run the Web App
+
+The visual version displays each recommendation with its poster, title, and rating.
+
+1. Create a free API key at [TMDB](https://www.themoviedb.org/settings/api).
+2. Set the key in PowerShell for the current terminal:
+
+   ```powershell
+   $env:TMDB_API_KEY = "your_tmdb_api_key"
+   ```
+
+3. Start Streamlit:
+
+   ```bash
+   streamlit run app.py
+   ```
+
+4. Open the local URL shown in the terminal.
 
 ## Usage
 
@@ -98,4 +122,4 @@ The ratings data contains:
 
 ## Poster Support
 
-The current dataset does not contain poster URLs or image IDs, so the command-line version displays movie titles and ratings. Poster support can be added later by connecting the project to a movie metadata service such as TMDB and adding a poster URL for each movie.
+The Streamlit app searches TMDB for each recommended movie and displays the available poster. The command-line version continues to display movie titles and ratings. If a poster is not available, the app shows a clear placeholder instead.
