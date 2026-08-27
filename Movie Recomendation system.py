@@ -30,7 +30,10 @@ def recommend(movie_title):
     movie_rows = movies[movies["title"].str.lower() == movie_title.lower()]
 
     if movie_rows.empty:
-        print("Movie not found. Enter the exact title, including the year, such as Avatar (2009).")
+        movie_rows = movies[movies["title"].str.lower().str.contains(movie_title.lower(), regex=False)]
+
+    if movie_rows.empty:
+        print("Movie not found. Try entering another title.")
         return
 
     movie_index = movie_rows.index[0]
