@@ -43,7 +43,7 @@ def recommend(movie_title):
     movie_scores = list(enumerate(scores))
     movie_scores.sort(key=lambda item: item[1], reverse=True)
 
-    print("\nRecommended movies:")
+    print(f"\nRecommendations for {movie_rows.iloc[0]['title']}:")
     for index, score in movie_scores[1:6]:
         movie = movies.iloc[index]
         average_rating = average_ratings.get(movie["movieId"], 0)
@@ -52,5 +52,11 @@ def recommend(movie_title):
 
 if __name__ == "__main__":
     print("Movie Recommendation System")
-    title = input("Enter the exact movie title, such as Avatar (2009): ").strip()
-    recommend(title)
+    titles = input(
+        "Enter one or more movie titles separated by semicolons: "
+    ).split(";")
+
+    for title in titles:
+        title = title.strip()
+        if title:
+            recommend(title)
