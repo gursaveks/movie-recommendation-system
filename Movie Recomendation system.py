@@ -1,4 +1,5 @@
 import os
+import sys
 
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
@@ -52,9 +53,12 @@ def recommend(movie_title):
 
 if __name__ == "__main__":
     print("Movie Recommendation System")
-    titles = input(
-        "Enter one or more movie titles separated by semicolons: "
-    ).split(";")
+    if len(sys.argv) > 1:
+        titles = " ".join(sys.argv[1:]).split(";")
+    else:
+        titles = input(
+            "Enter one or more movie titles separated by semicolons: "
+        ).split(";")
 
     for title in titles:
         title = title.strip()
