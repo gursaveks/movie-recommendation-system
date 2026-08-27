@@ -44,6 +44,7 @@ This project is designed as a clear example for learning about:
 | `movies.csv` | Movie IDs, titles, and genres |
 | `ratings.csv` | User ratings for movies |
 | `requirements.txt` | Required Python packages |
+| `sample_output.txt` | Example run and expected recommendations |
 
 ## Installation
 
@@ -80,6 +81,16 @@ The visual version displays each recommendation with its poster, title, and rati
    ```
 
 4. Open the local URL shown in the terminal.
+
+## How the Program Runs
+
+1. The app loads movie information and ratings from the CSV files.
+2. Enter a movie title in the search box.
+3. Click **Get Recommendations**.
+4. The app compares the selected movie with other movies using their genres.
+5. Five similar movies appear as cards with their posters, titles, and average ratings.
+
+An example run is available in [`sample_output.txt`](sample_output.txt).
 
 ## Usage
 

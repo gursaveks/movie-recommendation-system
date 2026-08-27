@@ -1,0 +1,34 @@
+Movie Recommendation System - Sample Run
+
+Command:
+streamlit run app.py
+
+Local URL:
+http://localhost:8501
+
+Input:
+Avatar (2009)
+
+Recommendations shown in the web app:
+
+1. Star Trek (2009)
+   Rating: 3.9/5
+
+2. Fire From Below (2009)
+   Rating: 0.0/5
+
+3. Megafault (2009)
+   Rating: 0.0/5
+
+4. Transformers: Revenge of the Fallen (2009)
+   Rating: 2.6/5
+
+5. Avengers, The (2012)
+   Rating: 3.8/5
+
+The Streamlit interface displays each recommendation as a card with:
+- Movie poster from TMDB
+- Movie title
+- Average rating
+
+Note: Posters require a valid TMDB_API_KEY environment variable.
