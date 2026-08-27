@@ -92,6 +92,12 @@ The visual version displays each recommendation with its poster, title, and rati
 
 An example run is available in [`sample_output.txt`](sample_output.txt).
 
+## Live App Preview
+
+The following screenshot shows the running Streamlit application after searching for `Star Trek Beyond (2016)`:
+
+![Movie recommendation app preview](live_app_screenshot.png)
+
 ## Usage
 
 Enter one title:
